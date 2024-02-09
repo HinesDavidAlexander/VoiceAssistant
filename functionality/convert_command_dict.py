@@ -1,4 +1,4 @@
-def process_docstring(docstring):
+def process_docstring_alt(docstring): # Unused
     """
     Processes a function's docstring to strip out everything after "Args:" or "Returns:",
     or just strips blank space if neither are there.
@@ -10,11 +10,25 @@ def process_docstring(docstring):
     The processed docstring.
     """
     if "Args:" in docstring:
-        return docstring.split("Args:")[0].strip()
-    elif "Returns:" in docstring:
-        return docstring.split("Returns:")[0].strip()
+        if "Returns:" in docstring:
+            docstring = docstring.split("Returns:")[0].strip()
+        args = docstring.split("Args:")[1].strip()
+        return "Args: " + args
     else:
-        return docstring.strip()
+        return ""
+
+def process_docstring(docstring: str) -> str:
+    """Converts a raw docstring into a processed docstring more conducive to consistent LLM responses.
+
+    Args:
+        docstring (str): raw docstring
+
+    Returns:
+        str: processed docstring
+    """
+    docstring = docstring.replace("\n", " ").strip()
+    if "Returns:" in docstring:
+        return docstring.split("Returns:")[0].strip()
 
 def replace_callables_with_docstrings(d):
     """

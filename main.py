@@ -8,10 +8,10 @@ import copy
 # Import the actions
 from actions.weather import get_weather, get_weather_forecast
 from actions.find_location import get_location
+from actions.lookup_query import Search
 
 # Import the action router
 from functionality.action_router import get_action
-
 
 
 class App():
@@ -83,7 +83,11 @@ class App():
                 # Run the callable
                 if callable(running_dict):
                     print(f"Running Action: {running_dict.__name__}")
-                    action_return = running_dict()
+                    if "Args:" in running_dict.__doc__: #TODO: Change this to check if it's a class method or function, and have the rule that only methods can accept arguments, and functions cannot
+                        # Check if the function has arguments, if so, pass the user_command_req to the function (that should always be the input for the function, should be type str)
+                        action_return = running_dict(user_command_req)
+                    else:
+                        action_return = running_dict()
                     # render the return to the GUI
                     self.output_label.configure(text=action_return)
         
@@ -91,7 +95,12 @@ class App():
         return
 
 if __name__ == "__main__":
-    commands = {"weather": {"Now":get_weather, "Forecast":get_weather_forecast}, "location": get_location}
+    # Initialize the command dictionary with function based actions
+    commands = {"weather": {"Now":get_weather, "Forecast":get_weather_forecast}, "location": get_location, "search": Search.search}
     
     app = App(command_dict=commands)
+    # Add class based actions to the command dictionary
+    app.command_dict | {}
+    
+    # Start the GUI loop
     app.gui.mainloop()

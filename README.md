@@ -30,6 +30,7 @@ The following are a list of potential future improvements that could be made bas
 - NLP for similarity to 'run command' action phrase, recognition isn't always accurate and may need a few tries sometimes
 - NLP for simmilarity to command options from the dict, same reason as prior note
 - More advanced GUI, current GUI implementation targets function over style, and therefore is quite rudamentary.
+- Change action input style and usage rules relating to methods and fns (see TODO in App.run_action method in `main.py`)
 
 ## Technologies Used
 
