@@ -7,14 +7,15 @@ This project is a one-day experiment aimed at creating a simple version of a hom
 ## Features
 
 - **Voice Command Recognition**: Accept basic voice commands to perform tasks like turning on/off lights or checking the weather.
-- **Device Integration**: Basic integration with simulated home devices (e.g., lights, thermostat).
+- **Device Integration**: [NOT IMPLEMENTED] Basic integration with simulated home devices (e.g., lights, thermostat).
 - **Weather Updates**: Provide current weather information upon request.
+- **Location Data**: Provide location readout to the user based on IP location
 
 ## Limitations
 
 Given the time constraint of a single day, the following limitations apply:
 
-- Limited device compatibility: Only a predefined set of virtual devices will be controllable.
+- Limited device compatibility: Only a predefined set of virtual actions will be usable.
 - Simplified voice recognition: May not accurately interpret all commands due to the use of basic voice recognition techniques.
 - Basic functionality: Features will be rudimentary, focusing on demonstrating the concept rather than providing a polished user experience.
 
@@ -38,14 +39,14 @@ The following are a list of potential future improvements that could be made bas
 
 ## Setup Instructions
 
-1. **Clone the repository**: `git clone [PLACEHOLDER]https://github.com/your-username/my-home-assistant.git`
+1. **Clone the repository**: `git clone https://github.com/HinesDavidAlexander/VoiceAssistant.git`
 2. **Install dependencies**: Navigate to the project directory and run `pip install -r requirements.txt` to install necessary Python libraries.
-3. **API Keys**: Obtain necessary API keys (e.g., OpenWeatherMap API) and set them in the configuration file (`.env`) at the root level.
+3. **API Keys**: Obtain necessary API keys (e.g., SpeechRecognition API) and set them in the configuration file (`.env`) at the root level.
 4. **Run the Assistant**: Execute `main.py` to start the home assistant. Ensure your microphone is set up correctly for voice commands.
 
 ## Usage
 
-- **Voice Commands**: Say "Turn on the lights", "What's the weather?", or "Play music" after the beep sound to interact with the assistant.
+- **Voice Commands**: Say "Run Command - [some command]" to get the assistant to pick and run the specified command. Current actions [subject to expansion] are: Weather, Location
 - **GUI Interface**: Access the simple dashboard by running `main.py`
 
 ## Contributing
