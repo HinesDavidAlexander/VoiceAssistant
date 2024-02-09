@@ -31,6 +31,7 @@ The following are a list of potential future improvements that could be made bas
 - NLP for simmilarity to command options from the dict, same reason as prior note
 - More advanced GUI, current GUI implementation targets function over style, and therefore is quite rudamentary.
 - Change action input style and usage rules relating to methods and fns (see TODO in App.run_action method in `main.py`)
+- [NEXT STEP] Wrap the Action calls in a decision LLM agent that takes the text var of the voice input and uses the function chosen as a 'tool', later outputting a final result that's rendered to the GUI (later spoken aloud?)
 
 ## Technologies Used
 
