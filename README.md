@@ -41,7 +41,7 @@ The following are a list of potential future improvements that could be made bas
 
 1. **Clone the repository**: `git clone https://github.com/HinesDavidAlexander/VoiceAssistant.git`
 2. **Install dependencies**: Navigate to the project directory and run `pip install -r requirements.txt` to install necessary Python libraries.
-3. **API Keys**: Obtain necessary API keys (e.g., SpeechRecognition API) and set them in the configuration file (`.env`) at the root level.
+3. **API Keys**: Obtain necessary API keys (e.g., SpeechRecognition API) and set them in the configuration file (`.env`) at the root level. Required keys are shown in `.env.example`
 4. **Run the Assistant**: Execute `main.py` to start the home assistant. Ensure your microphone is set up correctly for voice commands.
 
 ## Usage
